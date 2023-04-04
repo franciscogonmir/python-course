@@ -1,4 +1,4 @@
-isLeapYear = lambda year : year % 2 == 0
+isLeapYear = lambda year : (year % 400 == 0) and (year % 100 == 0) or (year % 4 ==0) and (year % 100 != 0)
 year = int(input("Enter year: "))
 if isLeapYear(year):
     print(str(year) + " is leap year")
