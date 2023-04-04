@@ -1,17 +1,12 @@
 class Student:
-    __name = ""
-    __grade = -1
-
-    def askName(self):
-        self.__name = input("Enter your name: ")
-
-    def askGrade(self):
-        self.__grade =  float(input("Enter your grade: "))
+    def __init__(self, name, grade):
+        self.__name = name
+        self.__grade = grade
 
     def __str__(self):
-        return "-------Student data--------\n" + " Name: " + self.__name \
-               + "\n Grade: " + str(self.__grade) \
-               + "\n The result is Exam " + self.result()
+        return "-------Student data--------\n Name: {} \n Grade: {}\n The result is Exam {}".format(self.__name,
+                                                                                                    self.__grade
+                                                                                                    , self.result())
 
     def result(self):
         if self.__grade >= 5:
@@ -20,7 +15,7 @@ class Student:
             return "failure"
 
 
-student = Student()
-student.askName()
-student.askGrade()
-print(student.__str__())
+student1 = Student("Fran", 4.9)
+student2 = Student("Rome", 5.1)
+print(student1.__str__())
+print(student2.__str__())

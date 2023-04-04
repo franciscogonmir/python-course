@@ -5,7 +5,7 @@ class Vehicle():
         self.__doors = doors
 
     def __str__(self):
-        return " Color: " + self.__color + "\n Wheels: " + str(self.__wheels) + "\n Doors: " + str(self.__doors)
+        return "Color:{} \n Wheels: {} \n Doors:  {}".format(self.__color,self.__wheels,self.__doors)
 
 
 class Car(Vehicle):
@@ -15,8 +15,9 @@ class Car(Vehicle):
         super().__init__(color,wheels,doors)
 
     def __str__(self):
-        return "----------Car info------------\n" + super(Car, self).__str__() + " Speed: " + str(self.__speed) +\
-               "\n desplacement: " + str(self.__displacement)
+        return "----------Car info------------\n {} \n Speed: {} \n desplacement: {}".format(super(Car, self).__str__()
+                                                                                           ,self.__speed
+                                                                                           ,self.__displacement)
 
 car = Car("White",4,4,280,2000)
 print(car.__str__())
